@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title> Image slider </title>
+        <meta charset="UTF-8" name="viewport" content="width=device-width , scale=1.0">
+        <link rel="stylesheet" href="imageslider.css">
+        <script>
+            var currentIndex = 1;
+            
+            displaySlides(currentIndex);
+            function displaySlides(num) {
+                var x;
+                var slides = document.getElementsByClassName("imageSlides");
+                if (num > slides.length) { currentIndex = 1 }
+                if (num < 1) { currentIndex = slides.length }
+                for (x = 0; x < slides.length; x++) {
+                    slides[x].style.display = "none";
+                }
+                slides[currentIndex - 1].style.display = "block";
+            }
+
+            function setSlides(num) {
+                displaySlides(currentIndex += num);
+            }
+        </script>
+    </head>
+    <body>
+            <div class="image-slideshow">
+                <div class="imageSlides fade">
+                    <img src="pexels-andy-vu-3244513.jpg" alt="img1">
+                </div>
+                <div class="imageSlides fade">
+                    <img src="pexels-asad-photo-maldives-3293148.jpg" alt="img2">
+                </div>
+                <div class="imageSlides fade">
+                    <img src="pexels-eberhard-grossgasteiger-572897.jpg" alt="img3">
+                </div>
+                <div class="imageSlides fade">
+                    <img src="pexels-frans-van-heerden-624015.jpg" alt="img4">
+                </div>
+                <div class="imageSlides fade">
+                    <img src="pexels-jeremy-bishop-2922672.jpg" alt="img5">
+                </div>
+                <div class="imageSlides fade">
+                    <img src="pexels-joyston-judah-933054.jpg" alt="img6">
+                </div>
+                <div class="imageSlides fade">
+                    <img src="pexels-luis-del-río-15286.jpg" alt="img7">
+                </div>
+                <div class="imageSlides fade">
+                    <img src="pexels-oleksandr-pidvalnyi-345522.jpg" alt="img8">
+                </div>
+                <div class="imageSlides fade">
+                    <img src="pexels-oleksandr-pidvalnyi-345522.jpg" alt="img9">
+                </div>
+                <a class="slider-btn previous" onclick="setSlides(-1)">❮</a>
+                <a class="slider-btn next" onclick="setSlides(1)">❯</a>
+            </div>
+    </body>
+</html>
